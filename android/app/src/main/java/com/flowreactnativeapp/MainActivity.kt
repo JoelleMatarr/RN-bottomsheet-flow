@@ -1,22 +1,66 @@
+//package com.flowreactnativeapp
+//
+//import android.os.Bundle
+//import androidx.activity.ComponentActivity
+//import androidx.activity.compose.setContent
+//import com.facebook.react.ReactActivity
+//import com.facebook.react.ReactApplication
+//import com.facebook.react.ReactRootView
+//import com.facebook.react.ReactInstanceManager
+//import com.facebook.react.ReactNativeHost
+////import com.facebook.react.bridge.ReactApplication
+//import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
+//class MainActivity : ReactActivity() {
+//    override fun getMainComponentName(): String {
+//        return "FlowReactNativeApp"
+//    }
+//}
+
 package com.flowreactnativeapp
 
-import com.facebook.react.ReactActivity
+import android.os.Bundle
 import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
-import com.facebook.react.defaults.DefaultReactActivityDelegate
+import com.facebook.react.ReactRootView
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
+import androidx.fragment.app.FragmentActivity
 
-class MainActivity : ReactActivity() {
+class MainActivity : FragmentActivity(), DefaultHardwareBackBtnHandler {
 
-  /**
-   * Returns the name of the main component registered from JavaScript. This is used to schedule
-   * rendering of the component.
-   */
-  override fun getMainComponentName(): String = "FlowReactNativeApp"
+    private lateinit var reactDelegate: ReactActivityDelegate
 
-  /**
-   * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
-   * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
-   */
-  override fun createReactActivityDelegate(): ReactActivityDelegate =
-      DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val localDelegate = object : ReactActivityDelegate(this, "FlowReactNativeApp") {
+            public override fun createRootView(): ReactRootView {
+                return ReactRootView(context)
+            }
+        }
+
+        reactDelegate = localDelegate
+        val rootView = localDelegate.createRootView()
+        setContentView(rootView)
+        localDelegate.onCreate(savedInstanceState)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        reactDelegate.onResume()
+    }
+
+    override fun onPause() {
+        reactDelegate.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        reactDelegate.onDestroy()
+        super.onDestroy()
+    }
+
+    // ✅ REQUIRED for DefaultHardwareBackBtnHandler
+    override fun invokeDefaultOnBackPressed() {
+        super.onBackPressedDispatcher.onBackPressed()
+    }
 }
+
