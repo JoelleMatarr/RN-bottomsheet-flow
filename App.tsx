@@ -7,8 +7,8 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <FlowView
         style={styles.flow}
-        paymentSessionID="ps_2vN0SHF9Air1PpPmCaq4S6oSvZ4"
-        paymentSessionSecret="pss_6386e01a-08ec-4421-baf4-61188c84320d"
+        paymentSessionID="ps_2vObsNsx8L81kMGqFRSQfeOpWQ4"
+        paymentSessionSecret="pss_2f6d03ed-98aa-4617-ae20-7c85bccf94d8"
         publicKey="pk_sbox_cwlkrqiyfrfceqz2ggxodhda2yh"
       />
     </SafeAreaView>
