@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,6 +10,7 @@
       android:allowBackup="false"
       android:theme="@style/AppTheme"
       android:usesCleartextTraffic="true"
+      tools:replace="android:usesCleartextTraffic"
       android:supportsRtl="true">
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 <!--      <activity-->

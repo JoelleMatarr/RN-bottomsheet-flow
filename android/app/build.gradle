@@ -47,6 +47,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
     }
     signingConfigs {
         debug {
@@ -76,7 +80,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime:2.5.1'
     implementation 'androidx.compose.ui:ui-android:1.7.8'
 
-    implementation("com.checkout:checkout-android-components:1.0.0-beta-2")
+    implementation("com.checkout:checkout-android-components:1.0.0-beta-6")
     // Lifecycle + ViewModel
 
 //    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")//new

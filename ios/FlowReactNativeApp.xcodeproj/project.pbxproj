@@ -12,6 +12,10 @@
 		5D29B9218D565E1F2FAC6AC3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A8F980F62DC9E8350078D749 /* CheckoutComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A8F980F52DC9E8350078D749 /* CheckoutComponents */; };
+		A8F980F82DC9EB460078D749 /* CheckoutComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A8F980F72DC9EB460078D749 /* CheckoutComponents */; };
+		A8F981002DCA29590078D749 /* FlowViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F980FF2DCA29520078D749 /* FlowViewManager.swift */; };
+		A8F981022DCA2A900078D749 /* FlowViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F981012DCA2A900078D749 /* FlowViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-FlowReactNativeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlowReactNativeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FlowReactNativeApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlowReactNativeApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8F980FF2DCA29520078D749 /* FlowViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewManager.swift; sourceTree = "<group>"; };
+		A8F981012DCA2A900078D749 /* FlowViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewManager.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -32,7 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F980F62DC9E8350078D749 /* CheckoutComponents in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-FlowReactNativeApp.a in Frameworks */,
+				A8F980F82DC9EB460078D749 /* CheckoutComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				A8F980FF2DCA29520078D749 /* FlowViewManager.swift */,
+				A8F981012DCA2A900078D749 /* FlowViewManager.swift */,
 			);
 			name = FlowReactNativeApp;
 			sourceTree = "<group>";
@@ -144,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				A8F980F42DC9E8350078D749 /* XCRemoteSwiftPackageReference "checkout-ios-components" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F981022DCA2A900078D749 /* FlowViewManager.swift in Sources */,
+				A8F981002DCA29590078D749 /* FlowViewManager.swift in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRKLDVJRBQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = FlowReactNativeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -275,6 +291,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FlowReactNativeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlowReactNativeApp/FlowReactNativeApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -288,6 +305,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRKLDVJRBQ;
 				INFOPLIST_FILE = FlowReactNativeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,6 +320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FlowReactNativeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlowReactNativeApp/FlowReactNativeApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -481,6 +500,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8F980F42DC9E8350078D749 /* XCRemoteSwiftPackageReference "checkout-ios-components" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/checkout/checkout-ios-components";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8F980F52DC9E8350078D749 /* CheckoutComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8F980F42DC9E8350078D749 /* XCRemoteSwiftPackageReference "checkout-ios-components" */;
+			productName = CheckoutComponents;
+		};
+		A8F980F72DC9EB460078D749 /* CheckoutComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8F980F42DC9E8350078D749 /* XCRemoteSwiftPackageReference "checkout-ios-components" */;
+			productName = CheckoutComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
