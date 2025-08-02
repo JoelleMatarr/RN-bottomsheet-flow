@@ -1,16 +1,27 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import FlowView from './FlowView';
+import { SafeAreaView, StyleSheet, Button, NativeModules, View } from 'react-native';
+
+// You need to import the native module by the name you give it in Kotlin.
+const { CheckoutModule } = NativeModules;
 
 const App = () => {
+  const handleCheckoutPress = () => {
+    CheckoutModule.showCheckoutBottomSheet(
+      "ps_30jAfHVW2WAexjUrmTeuuwxEvQ6",
+      "pss_d5e102b5-3eb5-4725-b039-b009925cf7e5",
+      "pk_sbox_cwlkrqiyfrfceqz2ggxodhda2yh"
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <FlowView
-        style={styles.flow}
-        paymentSessionID="ps_2xwINLAMMgCus8w9UEwqHsaRWEe"
-        paymentSessionSecret="pss_89eed584-6525-435d-82c1-d2011960b372"
-        publicKey="pk_sbox_cwlkrqiyfrfceqz2ggxodhda2yh"
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Start Checkout"
+          onPress={handleCheckoutPress}
+          color="#EA5D29" // A touch of branding
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -19,13 +30,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center', // Center the button horizontally
     backgroundColor: '#eee',
   },
-  flow: {
-    width: '100%',
-    height: 600,
-    borderWidth: 2,
-    borderColor: 'red',
+  buttonContainer: {
+    width: 200,
   },
 });
 
